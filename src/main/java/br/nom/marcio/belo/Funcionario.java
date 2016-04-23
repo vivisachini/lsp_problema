@@ -1,11 +1,13 @@
 package br.nom.marcio.belo;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 public abstract class Funcionario
 {
     private String nome;
-    private BigDecimal salarioAnual;
+    protected BigDecimal salarioAnual;
 
     protected Funcionario(String nome, BigDecimal salarioAnual) {
         this.nome = nome;
@@ -16,19 +18,20 @@ public abstract class Funcionario
         return nome;
     }
 
-    public BigDecimal getSalarioAnual() {
-        return salarioAnual;
+    public BigDecimal getSalarioAnual()
+    {
+        return salarioAnual.setScale( 2, BigDecimal.ROUND_UP);
     }
 
     /**
-     * Taxa percentual na qual o sal·rio anualizado ser· reajustado
+     * Taxa percentual na qual o sal√°rio anualizado ser√° reajustado
      * @param taxa valor maior que 0 e menor ou igual a 10.
      */
     public abstract void reajustar( BigDecimal taxa);
 
     /**
      *
-     * @return
+     * @return valor a ser pago
      */
     public abstract BigDecimal pagar();
 }

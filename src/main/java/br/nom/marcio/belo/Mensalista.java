@@ -1,6 +1,8 @@
 package br.nom.marcio.belo;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 public class Mensalista extends Funcionario
 {
@@ -13,6 +15,8 @@ public class Mensalista extends Funcionario
     public void reajustar(BigDecimal taxa)
     {
         validarTaxa( taxa);
+        this.salarioAnual = this.salarioAnual.multiply( taxa.divide( new BigDecimal("100")
+                , 2, BigDecimal.ROUND_HALF_UP).add( BigDecimal.ONE) );
     }
 
     private void validarTaxa(BigDecimal taxa)
@@ -29,6 +33,6 @@ public class Mensalista extends Funcionario
 
     @Override
     public BigDecimal pagar() {
-        return this.getSalarioAnual().divide( new BigDecimal("12") );
+        return this.getSalarioAnual().divide( new BigDecimal("12"), BigDecimal.ROUND_HALF_UP );
     }
 }
