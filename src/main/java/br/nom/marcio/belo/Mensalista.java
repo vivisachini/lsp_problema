@@ -1,8 +1,6 @@
 package br.nom.marcio.belo;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
 
 public class Mensalista extends Funcionario
 {
