@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 public class Bonificado extends Funcionario
 {
+    public static final BigDecimal CINCO = new BigDecimal("5.00");
     private BigDecimal bonus = BigDecimal.ZERO;
 
     protected Bonificado(String nome, BigDecimal salarioAnual) {
@@ -27,7 +28,7 @@ public class Bonificado extends Funcionario
 
     private boolean isTaxaForaIntervalo(BigDecimal taxa)
     {
-        return taxa.compareTo( BigDecimal.ZERO) <= 0 || taxa.compareTo( new BigDecimal("5.00")) > 0;
+        return taxa.compareTo( BigDecimal.ZERO) <= 0 || taxa.compareTo(CINCO) > 0;
     }
 
     @Override
