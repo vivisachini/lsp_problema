@@ -31,11 +31,6 @@ public class Bonificado extends Funcionario
         return taxa.compareTo( BigDecimal.ZERO) <= 0 || taxa.compareTo(CINCO) > 0;
     }
 
-    @Override
-    public BigDecimal pagar() {
-        return this.salarioAnual.add( bonus);
-    }
-
     public void acumularBonus(BigDecimal acrescimoBonus)
     {
         bonus = bonus.add( acrescimoBonus);

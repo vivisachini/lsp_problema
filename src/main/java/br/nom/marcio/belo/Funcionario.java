@@ -26,10 +26,4 @@ public abstract class Funcionario
      * @param taxa valor maior que 0 e menor ou igual a 10.
      */
     public abstract void reajustar( BigDecimal taxa);
-
-    /**
-     *
-     * @return valor a ser pago
-     */
-    public abstract BigDecimal pagar();
 }

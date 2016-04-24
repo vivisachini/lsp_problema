@@ -29,8 +29,4 @@ public class Mensalista extends Funcionario
         return taxa.compareTo( BigDecimal.ZERO) <= 0 || taxa.compareTo( BigDecimal.TEN) > 0;
     }
 
-    @Override
-    public BigDecimal pagar() {
-        return this.getSalarioAnual().divide( new BigDecimal("12"), BigDecimal.ROUND_HALF_UP );
-    }
 }

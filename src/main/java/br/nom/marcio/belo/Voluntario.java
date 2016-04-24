@@ -14,9 +14,4 @@ public class Voluntario  extends Funcionario
     {
         throw new IllegalStateException("nao implementado");
     }
-
-    @Override
-    public BigDecimal pagar() {
-        throw new IllegalStateException("nao implementado");
-    }
 }
