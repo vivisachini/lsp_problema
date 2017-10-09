@@ -11,6 +11,7 @@ public class Bonificado extends Funcionario
         super(nome, salarioAnual);
     }
 
+
     @Override
     public void reajustar(BigDecimal taxa)
     {
