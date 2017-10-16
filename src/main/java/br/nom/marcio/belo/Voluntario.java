@@ -9,6 +9,7 @@ public class Voluntario  extends Funcionario
         super(nome, BigDecimal.ZERO);
     }
 
+
     @Override
     public void reajustar(BigDecimal taxa)
     {
